@@ -1,4 +1,4 @@
-# Instaa 📸
+# PrivatePixels 📸
 
 A full-stack Instagram-like social app with a **cinematic hero landing page**. No login required — just post and explore.
 
