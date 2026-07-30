@@ -17,7 +17,7 @@ export default function Navbar() {
         {/* Logo */}
         <button onClick={() => navigate('/')} className="flex items-center gap-2">
           <Globe size={22} className="text-white" />
-          <span className="text-white font-semibold text-lg">Asme</span>
+          <span className="text-white font-semibold text-lg">PrivatePixels</span>
         </button>
 
         {/* Nav links */}
@@ -28,11 +28,10 @@ export default function Navbar() {
               <button
                 key={path}
                 onClick={() => navigate(path)}
-                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  isActive
-                    ? 'bg-white/10 text-white'
-                    : 'text-white/60 hover:text-white hover:bg-white/5'
-                }`}
+                className={`flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-medium transition-all ${isActive
+                  ? 'bg-white/10 text-white'
+                  : 'text-white/60 hover:text-white hover:bg-white/5'
+                  }`}
               >
                 <Icon size={16} />
                 <span className="hidden sm:inline">{label}</span>
