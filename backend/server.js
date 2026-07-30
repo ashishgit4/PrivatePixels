@@ -8,6 +8,7 @@ dns.lookup = function (hostname, options, callback) {
     callback = options;
     options = {};
   }
+
   if (hostname.includes('imagekit.io')) {
     if (typeof options === 'object') {
       options.family = 4;
@@ -15,6 +16,7 @@ dns.lookup = function (hostname, options, callback) {
       options = { family: 4 };
     }
   }
+
   return originalLookup(hostname, options, callback);
 };
 
@@ -36,11 +38,13 @@ app.use(express.json());
 // Routes
 app.use('/api/posts', postRoutes);
 
-// Health check
+// Health Check
 app.get('/', (req, res) => {
-  res.json({ message: 'Private Pixel API running 🚀' });
+  res.json({
+    message: 'Private Pixel API running 🚀',
+  });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

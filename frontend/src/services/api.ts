@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'https://privatepixels.onrender.com/';
-
+const API_BASE =
+  import.meta.env.VITE_API_URL || "https://privatepixels.onrender.com";
 
 const api = axios.create({
   baseURL: API_BASE,
@@ -22,14 +22,22 @@ export interface ApiResponse<T> {
 }
 
 export const getPosts = async (): Promise<Post[]> => {
-  const { data } = await api.get<ApiResponse<Post[]>>('/posts');
+  const { data } = await api.get<ApiResponse<Post[]>>("/api/posts");
   return data.data;
 };
 
-export const createPost = async (formData: FormData): Promise<Post> => {
-  const { data } = await api.post<ApiResponse<Post>>('/posts', formData, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  });
+export const createPost = async (
+  formData: FormData
+): Promise<Post> => {
+  const { data } = await api.post<ApiResponse<Post>>(
+    "/api/posts",
+    formData,
+    {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    }
+  );
   return data.data;
 };
 
