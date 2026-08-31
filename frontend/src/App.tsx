@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Landing from './pages/Landing';
 import Feed from './pages/Feed';
 import CreatePost from './pages/CreatePost';
@@ -12,6 +13,7 @@ function App() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/create" element={<CreatePost />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
   );
 }
